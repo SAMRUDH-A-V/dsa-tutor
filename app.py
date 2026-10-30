@@ -1,6 +1,6 @@
 import gradio as gr
 from tutor import tutor
-
+import os
 from executor import run_java
 
 
@@ -522,4 +522,7 @@ with gr.Blocks(
     )
 
 
-app.launch(theme=gr.themes.Base())
+app.launch(
+    server_name="0.0.0.0",
+    server_port=int(os.environ.get("PORT", 7860))
+)
