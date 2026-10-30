@@ -1,0 +1,36 @@
+BINARY SEARCH TREES
+
+Binary Search Tree (BST):
+A binary tree where values smaller than a node are placed in the left subtree and larger values are placed in the right subtree.
+
+Common problems:
+1. Search in BST
+2. Insert into BST
+3. Delete a Node in BST
+4. Validate BST
+
+Search:
+Compare the target with the current node.
+If target is smaller, go left.
+If target is larger, go right.
+
+Average Time Complexity: O(log n)
+Worst Time Complexity: O(n)
+Space Complexity: O(h)
+
+Important property:
+Inorder traversal of a valid BST produces values in sorted order.
+
+Validate BST:
+Ensure every node satisfies the valid range determined by its ancestors.
+
+Common mistakes:
+1. Checking only the immediate left and right children.
+2. Forgetting that the entire subtree must satisfy the BST property.
+3. Confusing a binary tree with a BST.
+4. Incorrectly handling duplicate values.
+
+Hint progression:
+Hint 1: Where should a smaller value be located?
+Hint 2: Can you use the BST ordering property to decide which subtree to search?
+Hint 3: What should the inorder traversal of a valid BST look like?

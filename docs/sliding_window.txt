@@ -1,0 +1,40 @@
+SLIDING WINDOW
+
+Sliding Window:
+A technique for efficiently processing contiguous subarrays or substrings.
+
+Common problems:
+1. Maximum Sum Subarray of Size K
+2. Longest Substring Without Repeating Characters
+3. Minimum Size Subarray Sum
+4. Maximum Consecutive Ones
+
+Maximum Sum Subarray of Size K:
+Find the maximum sum of any contiguous subarray of size K.
+
+Optimal approach:
+Calculate the sum of the first window.
+Move the window one position at a time.
+Add the new element and remove the element leaving the window.
+
+Time Complexity: O(n)
+Space Complexity: O(1)
+
+Longest Substring Without Repeating Characters:
+Maintain a window containing unique characters.
+Expand the right pointer.
+If a duplicate appears, move the left pointer until the window becomes valid again.
+
+Time Complexity: O(n)
+Space Complexity: O(n)
+
+Common mistakes:
+1. Forgetting to remove the element leaving the window.
+2. Moving the left pointer incorrectly.
+3. Confusing fixed-size and variable-size windows.
+4. Using nested loops unnecessarily.
+
+Hint progression:
+Hint 1: Is the problem asking about a contiguous portion?
+Hint 2: Can you maintain a window instead of checking every subarray?
+Hint 3: What should happen when the current window becomes invalid?

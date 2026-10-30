@@ -1,0 +1,23 @@
+STACKS AND QUEUES
+
+Valid Parentheses:
+Given a string containing brackets, determine whether the brackets are valid.
+
+Optimal approach:
+Use a Stack.
+When an opening bracket appears, push it.
+When a closing bracket appears, check whether it matches the top of the stack.
+At the end, the stack should be empty.
+
+Time Complexity: O(n)
+Space Complexity: O(n)
+
+Common mistakes:
+1. Popping from an empty stack.
+2. Checking only the number of brackets instead of their order.
+3. Forgetting to check whether the stack is empty at the end.
+
+Hint progression:
+Hint 1: What data structure can remember the most recently opened bracket?
+Hint 2: When you see a closing bracket, which opening bracket should you compare it with?
+Hint 3: A Stack follows LIFO. How can that help?

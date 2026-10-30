@@ -1,0 +1,50 @@
+RECURSION
+
+Recursion:
+A function calls itself to solve smaller versions of the same problem.
+
+Every recursive solution should have:
+1. Base case
+2. Recursive case
+3. Progress toward the base case
+
+Common problems:
+1. Factorial
+2. Fibonacci
+3. Sum of Array
+4. Tree Traversal
+
+Factorial:
+factorial(n) = n * factorial(n - 1)
+
+Base case:
+factorial(0) = 1
+
+Time Complexity: O(n)
+Space Complexity: O(n) because of the call stack.
+
+Common mistakes:
+1. Forgetting the base case.
+2. Not moving toward the base case.
+3. Returning the wrong value.
+4. Creating infinite recursion.
+5. Confusing recursive calls with loops.
+
+Hint progression:
+Hint 1: What is the smallest input you can solve directly?
+Hint 2: How can the problem be reduced to a smaller input?
+Hint 3: What should the function return before making another recursive call?
+
+Backtracking:
+Backtracking explores possible choices and reverses a choice when it does not lead to a valid solution.
+
+Common problems:
+1. Subsets
+2. Permutations
+3. Combination Sum
+4. N-Queens
+
+Common mistakes:
+1. Forgetting to undo a choice.
+2. Incorrectly managing the current path.
+3. Missing the base condition.

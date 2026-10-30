@@ -1,0 +1,25 @@
+LINKED LISTS
+
+Reverse a Linked List:
+Given the head of a singly linked list, reverse the list and return the new head.
+
+Brute force approach:
+Store the nodes in an ArrayList and reconnect them in reverse order.
+Time Complexity: O(n)
+Space Complexity: O(n)
+
+Optimal approach:
+Use three pointers: prev, current, and next.
+Reverse the current node's next pointer and move all three pointers forward.
+Time Complexity: O(n)
+Space Complexity: O(1)
+
+Common mistakes:
+1. Losing the next node before changing current.next.
+2. Returning the old head instead of the new head.
+3. Forgetting to move the pointers forward.
+
+Hint progression:
+Hint 1: What pointers do you need to remember while traversing?
+Hint 2: Before changing current.next, where should you save the next node?
+Hint 3: Can you use prev, current, and next to reverse each link?

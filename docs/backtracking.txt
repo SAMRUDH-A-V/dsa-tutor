@@ -1,0 +1,47 @@
+BACKTRACKING
+
+Backtracking:
+Backtracking explores possible choices and removes a choice when it cannot lead to a valid solution.
+
+General structure:
+1. Choose
+2. Explore
+3. Undo the choice
+
+Common problems:
+1. Subsets
+2. Permutations
+3. Combination Sum
+4. N-Queens
+5. Sudoku Solver
+
+Subsets:
+Generate all possible subsets of an array.
+
+Approach:
+At each element, choose whether to include it or exclude it.
+Recursively explore both choices.
+
+Time Complexity: O(2^n)
+Space Complexity: O(n) recursion depth, excluding output.
+
+Permutations:
+Generate every possible ordering of elements.
+
+Approach:
+Choose an unused element, add it to the current path, recursively continue, then remove it before trying another choice.
+
+Time Complexity: O(n × n!)
+Space Complexity: O(n) excluding output.
+
+Common mistakes:
+1. Forgetting to undo the choice.
+2. Forgetting the base case.
+3. Using the same element incorrectly.
+4. Not tracking which elements have already been used.
+5. Modifying the current path without restoring it.
+
+Hint progression:
+Hint 1: What choices can you make at the current step?
+Hint 2: After exploring one choice, what must you do before trying another?
+Hint 3: Can you use choose → explore → undo?

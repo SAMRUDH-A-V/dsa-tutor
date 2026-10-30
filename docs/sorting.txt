@@ -1,0 +1,53 @@
+SORTING
+
+Sorting arranges elements in a particular order, usually ascending or descending.
+
+Common sorting algorithms:
+1. Bubble Sort
+2. Selection Sort
+3. Insertion Sort
+4. Merge Sort
+5. Quick Sort
+
+Bubble Sort:
+Repeatedly compare adjacent elements and swap them when they are in the wrong order.
+
+Time Complexity: O(n^2)
+Space Complexity: O(1)
+
+Selection Sort:
+Find the smallest element in the unsorted portion and place it at the correct position.
+
+Time Complexity: O(n^2)
+Space Complexity: O(1)
+
+Insertion Sort:
+Build the sorted portion one element at a time by inserting each element into its correct position.
+
+Time Complexity: O(n^2) average/worst case
+Space Complexity: O(1)
+
+Merge Sort:
+Divide the array into smaller parts, recursively sort them, and merge the sorted parts.
+
+Time Complexity: O(n log n)
+Space Complexity: O(n)
+
+Quick Sort:
+Choose a pivot, partition the array around the pivot, and recursively sort the partitions.
+
+Average Time Complexity: O(n log n)
+Worst Time Complexity: O(n^2)
+Space Complexity: O(log n) average recursion space.
+
+Common mistakes:
+1. Confusing time and space complexity.
+2. Forgetting that merge sort requires extra space.
+3. Assuming quick sort is always O(n log n).
+4. Incorrectly implementing the partition step.
+5. Forgetting to handle already sorted or empty arrays.
+
+Hint progression:
+Hint 1: Can you reduce the number of comparisons needed?
+Hint 2: Can you divide the problem into smaller parts?
+Hint 3: Which sorting algorithm repeatedly divides the array and then merges the results?

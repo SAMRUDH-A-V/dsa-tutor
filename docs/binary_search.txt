@@ -1,0 +1,49 @@
+BINARY SEARCH
+
+Binary Search:
+Binary Search finds a target in a sorted array by repeatedly dividing the search space in half.
+
+Basic approach:
+Maintain two pointers: left and right.
+Calculate the middle index.
+If the middle element equals the target, return it.
+If the target is greater, search the right half.
+If the target is smaller, search the left half.
+
+Time Complexity: O(log n)
+Space Complexity: O(1) for the iterative approach.
+
+Common problems:
+1. Binary Search
+2. First and Last Position
+3. Search Insert Position
+4. Search in Rotated Sorted Array
+
+Common mistakes:
+1. Using binary search on an unsorted array without a valid modification.
+2. Incorrectly updating left or right.
+3. Creating an infinite loop.
+4. Using incorrect middle calculation.
+5. Forgetting boundary conditions.
+
+Hint progression:
+Hint 1: Is the array sorted?
+Hint 2: Can you eliminate half of the search space after each comparison?
+Hint 3: What should happen to left or right depending on the middle element?
+
+First and Last Position:
+To find the first or last occurrence of a target, continue searching after finding the target instead of immediately stopping.
+
+Hint:
+When you find the target, which direction should you continue searching to find an earlier or later occurrence?
+
+
+SEARCH INSERT POSITION
+
+Given a sorted array and a target, find the index where the target should be inserted.
+
+Optimal approach:
+Use binary search to find the first position where the element is greater than or equal to the target.
+
+Time Complexity: O(log n)
+Space Complexity: O(1)

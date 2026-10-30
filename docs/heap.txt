@@ -1,0 +1,43 @@
+HEAP AND PRIORITY QUEUE
+
+Heap:
+A heap is a complete binary tree that satisfies a heap property.
+
+Min Heap:
+The smallest element is at the root.
+
+Max Heap:
+The largest element is at the root.
+
+Priority Queue:
+A data structure that processes elements according to priority rather than insertion order.
+
+Common problems:
+1. Kth Largest Element
+2. Kth Smallest Element
+3. Top K Frequent Elements
+4. Merge K Sorted Lists
+
+Kth Largest Element:
+Use a Min Heap of size K.
+Keep the K largest elements in the heap.
+The root becomes the Kth largest element.
+
+Time Complexity: O(n log k)
+Space Complexity: O(k)
+
+Common mistakes:
+1. Using Min Heap when Max Heap is required, or vice versa.
+2. Forgetting to maintain heap size K.
+3. Confusing heap with a fully sorted array.
+4. Assuming all heap operations are O(1).
+
+Common operations:
+Insert: O(log n)
+Remove top: O(log n)
+Peek top: O(1)
+
+Hint progression:
+Hint 1: Do you really need to sort all elements?
+Hint 2: Which data structure can continuously keep the largest or smallest elements?
+Hint 3: Can you maintain only K elements instead of all n elements?

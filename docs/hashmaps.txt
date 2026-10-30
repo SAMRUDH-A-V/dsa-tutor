@@ -1,0 +1,63 @@
+HASHMAPS AND HASHSETS
+
+HashMap:
+A HashMap stores key-value pairs and allows fast lookup using a key.
+
+Common problems:
+1. Two Sum
+2. Frequency Count
+3. First Unique Character
+4. Group Anagrams
+
+Frequency Count:
+Given an array, count how many times each number appears.
+
+Optimal approach:
+Use a HashMap where the number is the key and its frequency is the value.
+For every number, increase its frequency.
+
+Time Complexity: O(n)
+Space Complexity: O(n)
+
+First Unique Character:
+Count the frequency of every character using a HashMap.
+Then scan the string again and find the first character with frequency 1.
+
+Time Complexity: O(n)
+Space Complexity: O(n)
+
+Common mistakes:
+1. Forgetting to update the frequency correctly.
+2. Confusing keys and values.
+3. Using an ArrayList when constant-time lookup is needed.
+4. Forgetting that HashMap does not guarantee ordering.
+
+Hint progression:
+Hint 1: What information do you need to remember while scanning?
+Hint 2: Can you store each element along with how many times it appears?
+Hint 3: Which data structure provides fast key-based lookup?
+
+
+HASHSET
+
+A HashSet stores unique elements.
+
+Common problem:
+Contains Duplicate:
+Determine whether an array contains a duplicate value.
+
+Optimal approach:
+Add each number to a HashSet.
+If a number already exists in the set, a duplicate is present.
+
+Time Complexity: O(n)
+Space Complexity: O(n)
+
+Common mistakes:
+1. Using a HashSet when the frequency of elements is also required.
+2. Forgetting to check contains() before adding.
+
+Hint progression:
+Hint 1: What property does a Set have that an array does not?
+Hint 2: How can you detect whether an element was already seen?
+Hint 3: Can HashSet remember previously seen elements?

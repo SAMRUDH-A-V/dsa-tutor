@@ -1,0 +1,55 @@
+TREES
+
+Binary Tree:
+A tree where each node has at most two children.
+
+Important terms:
+Root: Top node of the tree.
+Leaf: Node with no children.
+Height: Longest path from a node to a leaf.
+Depth: Distance from the root to a node.
+
+Tree Traversals:
+
+Preorder:
+Root -> Left -> Right
+
+Inorder:
+Left -> Root -> Right
+
+Postorder:
+Left -> Right -> Root
+
+Level Order:
+Visit nodes level by level using a Queue.
+
+Common problems:
+1. Maximum Depth
+2. Inorder Traversal
+3. Level Order Traversal
+4. Same Tree
+
+Maximum Depth:
+Recursively find the maximum depth of the left and right subtrees.
+
+Time Complexity: O(n)
+Space Complexity: O(h), where h is the tree height.
+
+Level Order Traversal:
+Use a Queue.
+Add the root first.
+Remove nodes from the queue and add their children.
+
+Time Complexity: O(n)
+Space Complexity: O(n)
+
+Common mistakes:
+1. Confusing preorder, inorder, and postorder.
+2. Forgetting the null-tree case.
+3. Using Stack when Queue is needed for level order.
+4. Forgetting to add children to the queue.
+
+Hint progression:
+Hint 1: What should happen when the current node is null?
+Hint 2: Which traversal visits the root before its children?
+Hint 3: What data structure naturally processes nodes level by level?

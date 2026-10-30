@@ -1,0 +1,50 @@
+STRINGS
+
+Strings are sequences of characters.
+
+Common problems:
+1. Reverse String
+2. Valid Palindrome
+3. Anagram Check
+4. Longest Common Prefix
+
+Reverse String:
+Reverse the characters of a string.
+
+Optimal approach:
+Use two pointers, one at the beginning and one at the end.
+Swap the characters and move both pointers toward the center.
+
+Time Complexity: O(n)
+Space Complexity: O(1) when modifying a character array.
+
+Valid Palindrome:
+Determine whether a string reads the same forward and backward.
+
+Optimal approach:
+Use two pointers.
+Compare characters from both ends and move toward the center.
+If any pair differs, the string is not a palindrome.
+
+Time Complexity: O(n)
+Space Complexity: O(1) excluding the input representation.
+
+Anagram Check:
+Two strings are anagrams if they contain the same characters with the same frequencies.
+
+Optimal approach:
+Count character frequencies and compare them.
+
+Time Complexity: O(n)
+Space Complexity: O(1) for a fixed character set.
+
+Common mistakes:
+1. Ignoring character frequency.
+2. Comparing strings incorrectly.
+3. Forgetting case sensitivity requirements.
+4. Creating unnecessary extra strings.
+
+Hint progression:
+Hint 1: What must be true for two strings to be anagrams?
+Hint 2: Can you count how often each character appears?
+Hint 3: For a palindrome, what happens when you compare characters from both ends?

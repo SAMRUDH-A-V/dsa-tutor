@@ -1,0 +1,56 @@
+DYNAMIC PROGRAMMING
+
+Dynamic Programming (DP):
+DP solves problems by breaking them into overlapping subproblems and storing previously computed results.
+
+Two important properties:
+1. Overlapping subproblems
+2. Optimal substructure
+
+Common approaches:
+1. Top-down (Memoization)
+2. Bottom-up (Tabulation)
+
+Common problems:
+1. Climbing Stairs
+2. House Robber
+3. Coin Change
+4. Longest Common Subsequence
+5. 0/1 Knapsack
+
+Climbing Stairs:
+You can climb either 1 or 2 steps at a time. Find the number of ways to reach the top.
+
+Recurrence:
+dp[i] = dp[i-1] + dp[i-2]
+
+Base cases:
+dp[0] = 1
+dp[1] = 1
+
+Time Complexity: O(n)
+Space Complexity: O(n)
+
+Space optimized approach:
+Only the previous two values are needed.
+
+Time Complexity: O(n)
+Space Complexity: O(1)
+
+Memoization:
+Solve recursively and store already calculated results.
+
+Tabulation:
+Build the solution iteratively from smaller states to larger states.
+
+Common mistakes:
+1. Choosing DP when there are no overlapping subproblems.
+2. Incorrectly defining the DP state.
+3. Forgetting base cases.
+4. Using the wrong recurrence.
+5. Confusing memoization and tabulation.
+
+Hint progression:
+Hint 1: Can the problem be broken into smaller versions of itself?
+Hint 2: What information completely describes the smaller problem?
+Hint 3: Are you calculating the same subproblem multiple times?

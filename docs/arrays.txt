@@ -1,0 +1,25 @@
+ARRAYS
+
+Two Sum:
+Given an array of integers and a target, find two numbers whose sum equals the target.
+
+Brute force approach:
+Check every pair of elements.
+Time Complexity: O(n^2)
+Space Complexity: O(1)
+
+Optimal approach:
+Use a HashMap to store numbers that we have already seen.
+For each number x, check whether target - x exists in the HashMap.
+Time Complexity: O(n)
+Space Complexity: O(n)
+
+Common mistakes:
+1. Forgetting that the same array element cannot normally be used twice.
+2. Returning values instead of indices when the problem asks for indices.
+3. Not checking the complement before inserting the current number.
+
+Hint progression:
+Hint 1: Think about what information you need to remember while scanning the array.
+Hint 2: For every number x, what other number would complete the target?
+Hint 3: Can a HashMap help you check whether that number was already seen?

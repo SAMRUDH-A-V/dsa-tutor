@@ -1,0 +1,42 @@
+GREEDY ALGORITHMS
+
+Greedy Algorithm:
+A greedy algorithm makes the best-looking choice at each step with the goal of reaching a global optimum.
+
+Common problems:
+1. Activity Selection
+2. Jump Game
+3. Assign Cookies
+4. Gas Station
+5. Minimum Number of Arrows to Burst Balloons
+
+Activity Selection:
+Choose the maximum number of non-overlapping activities.
+
+Optimal approach:
+Sort activities by their finishing time.
+Always choose the activity that finishes earliest and does not overlap with the previously selected activity.
+
+Time Complexity: O(n log n)
+Space Complexity: O(1) excluding sorting space.
+
+Jump Game:
+Determine whether the last index can be reached.
+
+Greedy approach:
+Maintain the farthest index that can currently be reached.
+If the current index is beyond that point, the end cannot be reached.
+
+Time Complexity: O(n)
+Space Complexity: O(1)
+
+Common mistakes:
+1. Assuming every optimization problem can be solved greedily.
+2. Making a locally good choice without proving it leads to an optimal solution.
+3. Forgetting to sort when the greedy strategy requires ordering.
+4. Confusing greedy with dynamic programming.
+
+Hint progression:
+Hint 1: Can you make a choice that is best at the current step?
+Hint 2: What information should you maintain after making that choice?
+Hint 3: Can you prove that the local choice never prevents an optimal solution?
