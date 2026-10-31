@@ -17,7 +17,7 @@ def run_java(code):
             ["javac", java_file],
             capture_output=True,
             text=True,
-            timeout=5
+            timeout=15
         )
 
         if compile_result.returncode != 0:
