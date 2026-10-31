@@ -21,8 +21,9 @@ body {
 }
 
 .gradio-container {
+    width: 100% !important;
     max-width: 1400px !important;
-    margin: auto !important;
+    margin: 0 auto !important;
     background: transparent !important;
     position: relative;
     z-index: 2;
@@ -33,6 +34,10 @@ body {
    ABSTRACT BACKGROUND
    ============================================================ */
 
+/* ============================================================
+   GRID BACKGROUND
+   ============================================================ */
+
 #background-art {
     position: fixed;
     inset: 0;
@@ -41,11 +46,29 @@ body {
     z-index: 0;
     pointer-events: none;
     overflow: hidden;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.35)
+        ),
+        url("/gradio_api/file=assets/grid-bg.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+
+    animation: gridMove 25s linear infinite;
 }
 
-#background-art svg {
-    width: 100%;
-    height: 100%;
+@keyframes gridMove {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 120px 120px;
+    }
 }
 
 
@@ -72,12 +95,12 @@ body {
    ============================================================ */
 
 .panel {
-    background: rgba(18, 28, 39, 0.82) !important;
-    border: 1px solid rgba(150, 190, 220, 0.16) !important;
-    border-radius: 12px !important;
+    background: rgba(8, 8, 10, 0.82) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 14px !important;
     padding: 16px !important;
     backdrop-filter: blur(14px);
-}
+}   
 
 
 /* ============================================================
@@ -96,9 +119,9 @@ label span {
 
 textarea,
 input {
-    background: rgba(17, 27, 38, 0.9) !important;
-    color: #e8eef5 !important;
-    border: 1px solid #304252 !important;
+    background: rgba(8, 8, 10, 0.9) !important;
+    color: #eeeeee !important;
+    border: 1px solid #383838 !important;
     border-radius: 8px !important;
 }
 
@@ -109,8 +132,8 @@ input::placeholder {
 
 textarea:focus,
 input:focus {
-    border-color: #6fa8c9 !important;
-    box-shadow: 0 0 0 1px rgba(111, 168, 201, 0.25) !important;
+    border-color: #888888 !important;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12) !important;
 }
 
 
@@ -119,8 +142,8 @@ input:focus {
    ============================================================ */
 
 .code-container {
-    background: #0d1721 !important;
-    border: 1px solid #304252 !important;
+    background: #08080a !important;
+    border: 1px solid #383838 !important;
     border-radius: 10px !important;
     overflow: hidden !important;
     min-height: 0 !important;
@@ -128,21 +151,20 @@ input:focus {
 }
 
 .code-container textarea {
-    background: #0d1721 !important;
-    color: #dceaf3 !important;
+    background: #08080a !important;
+    color: #eeeeee !important;
     font-family: "Cascadia Code", "Consolas", monospace !important;
-    font-size: 14px !important;
-    line-height: 1.5 !important;
+    min-height: 0 !important;
+    height: 300px !important;
 }
-
 
 /* ============================================================
    CODE EDITOR HEADER
    ============================================================ */
 
 .code-container > div:first-child {
-    background: #142330 !important;
-    border-bottom: 1px solid #304252 !important;
+    background: #141416 !important;
+    border-bottom: 1px solid #383838 !important;
 }
 
 
@@ -151,14 +173,15 @@ input:focus {
    ============================================================ */
 
 .chatbot {
-    background: rgba(10, 17, 25, 0.88) !important;
-    border: 1px solid rgba(150, 190, 220, 0.18) !important;
-    border-radius: 10px !important;
+    background: rgba(5, 5, 7, 0.88) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 12px !important;
     backdrop-filter: blur(14px);
     height: 620px !important;
     min-height: 0 !important;
 }
 
+/* Chat messages */
 
 /* Chat messages */
 
@@ -166,21 +189,24 @@ input:focus {
     border-radius: 8px !important;
 }
 
-
 /* User message */
-
 .chatbot .message.user {
-    background: #245d7c !important;
-    color: white !important;
+    background: #eeeeee !important;
+    color: #080808 !important;
+    border: none !important;
 }
 
+.chatbot .message.user *,
+.chatbot .message.user p {
+    color: #080808 !important;
+    background: transparent !important;
+}
 
 /* Tutor message */
-
 .chatbot .message.bot {
-    background: #182531 !important;
-    color: #dce8f2 !important;
-    border: 1px solid #304252 !important;
+    background: #18181a !important;
+    color: #dddddd !important;
+    border: 1px solid #333333 !important;
 }
 
 
@@ -189,15 +215,15 @@ input:focus {
    ============================================================ */
 
 .primary-button {
-    background: #245d7c !important;
-    color: white !important;
-    border: 1px solid #397fa3 !important;
-    border-radius: 7px !important;
+    background: #f1f1f1 !important;
+    color: #080808 !important;
+    border: 1px solid #ffffff !important;
+    border-radius: 8px !important;
     font-weight: 600 !important;
 }
 
 .primary-button:hover {
-    background: #2d718f !important;
+    background: #d8d8d8 !important;
 }
 
 
@@ -206,15 +232,16 @@ input:focus {
    ============================================================ */
 
 .secondary-button {
-    background: rgba(22, 34, 47, 0.9) !important;
-    color: #c9e2f2 !important;
-    border: 1px solid #3b5366 !important;
-    border-radius: 7px !important;
+    background: rgba(20, 20, 22, 0.9) !important;
+    color: #eeeeee !important;
+    border: 1px solid #444444 !important;
+    border-radius: 8px !important;
     font-weight: 600 !important;
 }
 
 .secondary-button:hover {
-    background: #203546 !important;
+    background: #292929 !important;
+    border-color: #777777 !important;
 }
 
 
@@ -223,24 +250,23 @@ input:focus {
    ============================================================ */
 
 input[type="radio"] {
-    accent-color: #8ed8f2 !important;
+    accent-color: #ffffff !important;
 }
 
 /* Selected mode */
 label:has(input[type="radio"]:checked) {
-    background: #245d7c !important;
-    border-color: #6fa8c9 !important;
-    color: #ffffff !important;
+    background: #eeeeee !important;
+    border-color: #ffffff !important;
+    color: #080808 !important;
 }
 
-/* Text inside selected mode */
 label:has(input[type="radio"]:checked) span {
-    color: #ffffff !important;
+    color: #080808 !important;
 }
 
 /* Hover */
 label:has(input[type="radio"]):hover {
-    background: #203746 !important;
+    background: #292929 !important;
 }
 
 
@@ -249,14 +275,21 @@ label:has(input[type="radio"]):hover {
    ============================================================ */
 
 .new-chat {
+    position: static !important;
+    display: block !important;
+
     background: transparent !important;
-    color: #9eb4c5 !important;
-    border: 1px solid #34495a !important;
+    color: #cccccc !important;
+    border: 1px solid #444444 !important;
+
+    width: 140px !important;
+    margin: 12px 0 0 auto !important;
+    transform: none !important;
 }
 
 .new-chat:hover {
     color: white !important;
-    border-color: #6fa8c9 !important;
+    border-color: #777777 !important;
 }
 
 /* ============================================================
@@ -268,11 +301,43 @@ footer {
 }
 
 .gradio-container {
+    width: 100% !important;
     max-width: 1400px !important;
-    margin: auto !important;
+    margin: 0 auto !important;
     background: transparent !important;
     position: relative;
     z-index: 2;
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    .gradio-container {
+        padding: 12px !important;
+    }
+
+    .app-title {
+        font-size: 30px !important;
+    }
+
+    .app-subtitle {
+        font-size: 14px !important;
+    }
+
+    .panel {
+        padding: 12px !important;
+    }
+
+    .code-container {
+        height: 250px !important;
+    }
+
+    .chatbot {
+        height: 500px !important;
+    }
 }
 
 """
@@ -288,48 +353,8 @@ with gr.Blocks(
     # ========================================================
 
     gr.HTML("""
-    <div id="background-art">
-        <svg viewBox="0 0 1600 900"
-            preserveAspectRatio="none"
-            xmlns="http://www.w3.org/2000/svg">
-
-            <defs>
-                <filter id="glow">
-                    <feGaussianBlur stdDeviation="35"/>
-                </filter>
-
-                <linearGradient id="blueGlow"
-                    x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#1688c9"/>
-                    <stop offset="50%" stop-color="#2563eb"/>
-                    <stop offset="100%" stop-color="#06b6d4"/>
-                </linearGradient>
-            </defs>
-
-            <path
-                d="M-100 650
-                C250 300, 450 850, 800 500
-                S1250 150, 1700 400"
-                fill="none"
-                stroke="url(#blueGlow)"
-                stroke-width="120"
-                opacity="0.18"
-                filter="url(#glow)"
-            />
-
-            <path
-                d="M-100 650
-                C250 300, 450 850, 800 500
-                S1250 150, 1700 400"
-                fill="none"
-                stroke="url(#blueGlow)"
-                stroke-width="3"
-                opacity="0.35"
-            />
-
-        </svg>
-    </div>
-    """)
+    <div id="background-art"></div>
+    """)    
     
 
 
@@ -412,10 +437,7 @@ with gr.Blocks(
         # RIGHT SIDE
         # ====================================================
 
-        with gr.Column(
-            scale=1,
-            elem_classes="panel"
-        ):
+        with gr.Column(scale=1):
 
             chatbot = gr.Chatbot(
                 label="Tutor Conversation",
@@ -423,11 +445,11 @@ with gr.Blocks(
                 elem_classes="chatbot"
             )
 
-
-    clear = gr.Button(
-        "New Chat",
-        elem_classes="new-chat"
-    )
+            clear = gr.Button(
+                "＋ New Chat",
+                elem_classes="new-chat",
+                size="sm"
+            )
 
 
     # ========================================================
@@ -524,5 +546,6 @@ with gr.Blocks(
 
 app.launch(
     server_name="0.0.0.0",
-    server_port=int(os.environ.get("PORT", 7860))
+    server_port=int(os.environ.get("PORT", 7860)),
+    allowed_paths=[os.path.abspath("assets")]
 )

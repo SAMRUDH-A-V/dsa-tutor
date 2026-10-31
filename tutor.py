@@ -2,6 +2,7 @@ from dotenv import load_dotenv  # NEW
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_chroma import Chroma
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
+import time
 
 load_dotenv()  # NEW
 
@@ -54,8 +55,9 @@ retriever = db.as_retriever(
 )
 
 
-llm = ChatGoogleGenerativeAI(  # NEW
-    model="gemini-3.6-flash"
+llm = ChatGoogleGenerativeAI(
+    model="gemini-3.6-flash",
+    max_output_tokens=1200
 )
 
 
@@ -83,9 +85,9 @@ def tutor(mode, question, code, history, program_output):
             topic = topic_name
             break
 
-
+    start = time.time()
     docs = retriever.invoke(query)
-
+    print("RETRIEVAL TIME:", time.time() - start)
 
     if topic:
 
@@ -111,6 +113,15 @@ def tutor(mode, question, code, history, program_output):
 
     prompt = f"""
 You are a DSA tutor.
+
+Keep the response concise and focused. Avoid unnecessary repetition.
+
+Response length rules:
+- Give me a hint: Keep it short and do not reveal the full solution.
+- Explain concept: Give a detailed explanation, approximately 200–300 words.
+- Explain my code: Explain the code clearly, approximately 200–300 words or as much as needed to fully explain it.
+- Explain approach: Give a detailed explanation, approximately 200–300 words.
+- Find my mistake: Explain every mistake you find. The response length should depend on the number and complexity of the mistakes. Do not artificially limit it to 200–300 words.
 
 Use the provided knowledge as your primary reference.
 You may use your own DSA knowledge when the retrieved knowledge
@@ -258,28 +269,47 @@ Rules:
 """
 
 
-    # NEW: Use non-streaming Gemini response to avoid
-    # partial answers when Gemini has a temporary 503.
-        # NEW: Handle temporary Gemini API failures gracefully
+    # Get Gemini response normally
     try:
         response = llm.invoke(prompt)
-        content = response.content
+
+        if hasattr(response, "content"):
+            content = response.content
+
+            if isinstance(content, str):
+                yield content
+
+            elif isinstance(content, list):
+                text = ""
+                for item in content:
+                    if isinstance(item, dict) and "text" in item:
+                        text += item["text"]
+                    elif isinstance(item, str):
+                        text += item
+
+                yield text
+
+            else:
+                yield str(content)
+
+        else:
+            yield str(response)
 
     except Exception as e:
         error_message = str(e)
+        print("GEMINI ERROR:", error_message)
 
-        if "503" in error_message or "UNAVAILABLE" in error_message:
+        if "429" in error_message or "RESOURCE_EXHAUSTED" in error_message:
+            yield "⚠️ Gemini daily free-tier limit reached. Please try again after the quota resets."
+
+        elif "503" in error_message or "UNAVAILABLE" in error_message:
             yield "⚠️ Gemini is temporarily unavailable. Please try again in a few seconds."
+
         elif "504" in error_message or "DEADLINE_EXCEEDED" in error_message:
             yield "⚠️ Gemini took too long to respond. Please try again."
+
         else:
             yield "⚠️ Something went wrong while contacting Gemini. Please try again."
+
         return
 
-    if isinstance(content, str):
-        yield content
-
-    elif isinstance(content, list):
-        for item in content:
-            if isinstance(item, dict) and "text" in item:
-                yield item["text"]
