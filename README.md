@@ -82,12 +82,15 @@ Backtracking
 
 ## 🖥️ Screenshots
 
-### DSA Tutor
-![DSA Tutor](screenshots/main-ui.png)
+### Main Interface
+![DSA Tutor UI](screenshots/dsa-tutor-ui.png)
 
-### AI Tutor
-![AI Tutor](screenshots/tutor-answer.png)
+### AI Concept Explanation
+![Explain Concept](screenshots/explain-concept.png)
 
 ### Java Code Execution
-![Java Code Execution](screenshots/java-execution.png)
+![Java Code Output](screenshots/code-output.png)
+
+### AI Code Error Analysis
+![Why Code Wrong](screenshots/why-code-wrong.png)
 
